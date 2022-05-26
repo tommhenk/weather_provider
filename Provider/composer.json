@@ -1,0 +1,15 @@
+{
+    "name": "weather/provider",
+    "description": "Show weather in cms block",
+    "type": "magento2-module",
+    "version": "0.5",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Weather\\Provider\\": ""
+        }
+    }
+}
+

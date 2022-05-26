@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">weather_provider_listing.weather_provider_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>weather_provider_columns</spinner>
+        <deps>
+            <dep>weather_provider_listing.weather_provider_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="weather_provider_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="weather_provider_listing_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <exportButton name="export_button"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="weather_provider_columns">
+        <settings>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">weather_provider_listing.weather_provider_listing.weather_provider_columns.ids</item>
+                    <item name="target" xsi:type="string">applyAction</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+                        <item name="1" xsi:type="string">view</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <selectionsColumn name="ids" sortOrder="0">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="country" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Country</label>
+            </settings>
+        </column>
+        <column name="city" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City</label>
+            </settings>
+        </column>
+        <column name="temperature" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Temperature C</label>
+            </settings>
+        </column>
+        <column name="pressure" sortOrder="50">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Pressure</label>
+            </settings>
+        </column>
+        <column name="precipitation" sortOrder="60">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Precipitation mm</label>
+            </settings>
+        </column>
+        <column name="humidity" sortOrder="70">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Humidity %</label>
+            </settings>
+        </column>
+        <column name="wind_kph" sortOrder="80">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Wind km/h</label>
+            </settings>
+        </column>
+        <column name="wind_dir" sortOrder="90">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Wind direction</label>
+            </settings>
+        </column>
+        <column name="timestamp" sortOrder="100">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Timestamp</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

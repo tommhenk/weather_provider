@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/weather_provider/:id" method="GET">
+        <service class="Weather\Provider\Model\WeatherRepository"
+                 method="getById"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/weather_provider/save" method="POST">
+        <service class="Weather\Provider\Model\WeatherRepository"
+                 method="save"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/weather_provider/:id" method="DELETE">
+        <service class="Weather\Provider\Model\WeatherRepository"
+                 method="deleteById"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+</routes>

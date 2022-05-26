@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Weather_Provider::weather"
+             title="Weather"
+             translate="title"
+             module="Weather_Provider"
+             sortOrder="950"
+             resource="Weather_Provider::weather"
+        />
+        <add id="Weather_Provider::provider"
+             title="Weather Log"
+             translate="title"
+             module="Weather_Provider"
+             sortOrder="1100"
+             resource="Weather_Provider::provider"
+             action="weather/weather"
+             parent="Weather_Provider::weather"
+        />
+        <add id="Weather_Provider::config"
+             title="Weather Config"
+             translate="title"
+             module="Weather_Provider"
+             sortOrder="1100"
+             resource="Weather_Provider::config"
+             action="admin/system_config/edit/section/weather"
+             parent="Weather_Provider::weather"
+        />
+    </menu>
+</config>

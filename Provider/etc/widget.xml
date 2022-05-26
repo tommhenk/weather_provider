@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Weather\Provider\Block\Widget\Weather"
+            id="weather_provider_widget">
+        <label>Weather</label>
+        <description>Weather's parameters</description>
+        <parameters>
+            <parameter name="widget_title" xsi:type="text"
+                       visible="true"
+                       sort_order="20">
+                <label translate="true">
+                    Weather
+                </label>
+            </parameter>
+            <parameter name="widget_url" xsi:type="text"
+                       visible="true"
+                       sort_order="40">
+                <label translate="true">
+                    weather/weather/data
+                </label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

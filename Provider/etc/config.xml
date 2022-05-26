@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weather>
+            <general>
+                <enabled>1</enabled>
+                <api_endpoint>
+                    <![CDATA[@api.meteomatics.com]]>
+                    </api_endpoint>
+                <api_user>dfg_</api_user>
+                <api_password>tIj7v55KUp</api_password>
+            </general>
+        </weather>
+    </default>
+</config>

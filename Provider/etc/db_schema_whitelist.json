@@ -1,0 +1,19 @@
+{
+    "weather_provider": {
+        "column": {
+            "entity_id": true,
+            "city": true,
+            "country": true,
+            "temperature": true,
+            "precipitation": true,
+            "pressure": true,
+            "humidity": true,
+            "wind_kph": true,
+            "wind_dir": true,
+            "timestamp": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
